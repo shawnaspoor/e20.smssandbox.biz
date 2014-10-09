@@ -1,28 +1,4 @@
-body {
-	padding-top: 30px;
-}
-
-
-.breadcrumb > li + li:before {
-  padding: 0 5px;
-  color: #ccc;
-  content: ">\00a0";
-
-}
-
-.breadcrumb {
-  background-color: #fff;	
-}
-
-blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  color: lighten(@brand-black, 50%);
-  font-size: 14px;
-  border-left: 5px solid #eeeeee;
-
-}
-
+//custom styles
 footer {
 	padding: 40px;
 	margin-top: 20px;
@@ -30,10 +6,11 @@ footer {
 	background-color: @brand-secondary;
 }
 
-img {
-	width: auto;
-	height: auto;
+section {
+  margin-top: 25px;
+  border-top: solid 1px  darken(@brand-secondary, 10%);
 }
+
 
 .jumbotronimage {
 	width: 100%;
@@ -41,12 +18,46 @@ img {
 
 }
 
-    	
 .jumbotrontext {
-		float:left;
+    float:left;
 }
 
-//this is jumbotron styling
+.jumbotron h3  {
+  color: darken(@brand-secondary, 35%);
+}
+
+//Bootstrap styles changed by me
+img {
+  width: auto;
+  height: auto;
+}
+
+body {
+//added padding at the top to make room for the jumbotron
+  padding-top: 30px;
+}
+
+
+.breadcrumb {
+ //changed the background color
+  background-color: #fff; 
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  //changed the text color
+  color: lighten(@brand-black, 50%);
+  //changed the font size
+  font-size: 14px;
+  border-left: 5px solid #eeeeee;
+
+} 
+  
+//this is jumbotron styling that changes the font size based on the size of the screen
+//I found I needed to include a max-width for the small screen because I have two divs
+//in my jumbotron, one for the image and one for the text. The div for the text gets small
+//even when the screen isn't small.
 @media screen and (max-width: @screen-sm-min) {
    .jumbotron h1,
     .jumbotron .h1 {
@@ -96,14 +107,10 @@ img {
 }
 
 
-.jumbotron h3  {
-	color: darken(@brand-secondary, 35%);
-}
-
 /* Buttons with mixins */
 
 .btn-secondary {
-	
+	//changed the color and font of the button
 	.button-variant (#FFF; darken(@brand-third, 35%); darken(@brand-third, 50%));
 	font-family: 'Glegoo', serif;
 }
